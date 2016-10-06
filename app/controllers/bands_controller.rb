@@ -31,6 +31,10 @@ class BandsController < ApplicationController
   end
 
   def destroy
+    @band = current_band
+    @band.destroy
+
+    redirect_to bands_url
   end
 
   def edit

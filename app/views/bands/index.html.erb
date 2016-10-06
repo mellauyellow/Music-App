@@ -5,3 +5,7 @@
     <li><%= band.name %>, <%= link_to "more info...", band_url(band), method: :get %></li>
   <% end %>
 </ul>
+
+<br>
+
+<%= button_to "Add a band", new_band_url, method: :get %>

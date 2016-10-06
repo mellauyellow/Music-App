@@ -10,3 +10,4 @@
 <br>
 
 <%= button_to "Edit #{@band.name}", edit_band_url, method: :get %>
+<%= button_to "Delete #{@band.name}", band_url(@band), method: :delete %>
