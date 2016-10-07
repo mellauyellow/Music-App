@@ -1,0 +1,19 @@
+<header><%= link_to "<- Back to #{@current_band.name}", band_url(@current_band), method: :get %></header>
+
+<h2><%= @album.name %></h2>
+
+<h3>All tracks:</h3>
+<ul>
+  <% @album.tracks.each do |track| %>
+    <li><%= track.name %>
+      <%= button_to "Edit", edit_track_url(track), method: :get %>
+      <%= button_to "Delete", track_url, method: :delete %></li>
+  <% end %>
+</ul>
+
+<br>
+<%= button_to "Add a new track", new_album_track_url(@album), method: :get %>
+
+<br><br>
+<%= button_to "Edit #{@album.name}", edit_album_url, method: :get %>
+<%= button_to "Delete #{@album.name}", album_url(@album), method: :delete %>

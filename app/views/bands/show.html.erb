@@ -1,3 +1,5 @@
+<header><%= link_to "<- Back to Bands", bands_url, method: :get %></header>
+
 <h2><%= @band.name %></h2>
 
 <h3>All albums:</h3>
@@ -8,6 +10,8 @@
 </ul>
 
 <br>
+<%= button_to "Add a new album", new_band_album_url(@band), method: :get %>
 
+<br><br>
 <%= button_to "Edit #{@band.name}", edit_band_url, method: :get %>
 <%= button_to "Delete #{@band.name}", band_url(@band), method: :delete %>

@@ -26,4 +26,12 @@ class ApplicationController < ActionController::Base
   def current_band
     @current_band ||= Band.find_by_id(params[:id])
   end
+
+  def current_album
+    @current_album ||= Album.find_by_id(params[:id])
+  end
+
+  def current_track
+    @current_track ||= Track.find_by_id(params[:id])
+  end
 end
