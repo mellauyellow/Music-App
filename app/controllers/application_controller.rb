@@ -34,4 +34,8 @@ class ApplicationController < ActionController::Base
   def current_track
     @current_track ||= Track.find_by_id(params[:id])
   end
+
+  def require_login
+    redirect_to new_session_url if current_user.nil?
+  end
 end

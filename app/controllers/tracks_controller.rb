@@ -1,4 +1,6 @@
 class TracksController < ApplicationController
+  before_action :require_login
+  
   def create
     @track = Track.new(track_params)
 
